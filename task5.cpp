@@ -88,7 +88,7 @@ int main() {
             ans += "LIII";
             break;
         case 9:
-            ans += "IC";
+            ans += "XC";
             break;
     }
     ans += digit(x % 10);
