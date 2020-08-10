@@ -182,8 +182,8 @@ int main() {
         }
     }
     if (ok) {
-        cout << "YES" << endl;
+        cout << "LIES" << endl;
     } else {
-        cout << "NO" << endl;
+        cout << "DOESN'T LIES"<< endl;
     }
 }
