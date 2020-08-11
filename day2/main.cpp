@@ -32,8 +32,10 @@ void permutations(vector<ll> &v, set<ll> &was) {
     if (v.size() == n - 1) {
         ll res = getDist(v);
         if (res < minDist) {
+            minDist = res;
             path = vector<ll>();
-            for (ll t:v)path.pb(t);
+            for (ll t:v)
+                path.pb(t);
         }
         return;
     }
@@ -63,6 +65,9 @@ int main() {
     vector<ll> xw;
     set<ll> was;
     permutations(xw, was);
-    cout << minDist;
+    cout << minDist << endl;
+    cout << 1 << " ";
     for (ll t:path)cout << t << " ";
+    cout << 1 << " ";
+
 }
