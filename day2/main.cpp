@@ -14,6 +14,7 @@ typedef long double ld;
 ld dist[maxN][maxN];
 ld minDist = 10e18;
 ll n;
+vector<ll> path;
 
 ld getDist(vector<ll> &v) {
     ld d = 0;
@@ -26,10 +27,14 @@ ld getDist(vector<ll> &v) {
     return d;
 }
 
-//the stupidest realization,do not beat me 
+//not an algorithm
 void permutations(vector<ll> &v, set<ll> &was) {
-    if (v.size() == n-1) {
-        minDist = min(minDist, getDist(v));
+    if (v.size() == n - 1) {
+        ll res = getDist(v);
+        if (res < minDist) {
+            path = vector<ll>();
+            for (ll t:v)path.pb(t);
+        }
         return;
     }
     for (ll i = 2; i <= n; i++) {
@@ -59,4 +64,5 @@ int main() {
     set<ll> was;
     permutations(xw, was);
     cout << minDist;
+    for (ll t:path)cout << t << " ";
 }
